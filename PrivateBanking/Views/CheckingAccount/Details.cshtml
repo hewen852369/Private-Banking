@@ -1,0 +1,43 @@
+﻿@model PrivateBanking.Models.CheckingAccount
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <h4>CheckingAccount</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @*DisplayNameFor return then name of the attribute*@
+                @*Do not want to display the attribute name*@
+                @*Could just replace DIsplayNameFor with static html*@
+                @*Adding display attribute at chekcingaccount class*@
+                @Html.DisplayNameFor(model => model.AccountNumber)
+            </dt>
+
+            <dd>
+                @*DisplayFor return then value of the attribute*@
+                @Html.DisplayFor(model => model.AccountNumber)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Balance)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Balance)
+            </dd>
+
+        </dl>
+    </div>
+</div>

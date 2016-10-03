@@ -16,6 +16,9 @@ namespace PrivateBanking.Models
             // Add custom user claims here
             return userIdentity;
         }
+
+        // Add Pin attribute to AspNetUsers table.
+        public string Pin { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
@@ -29,5 +32,13 @@ namespace PrivateBanking.Models
         {
             return new ApplicationDbContext();
         }
+
+        // mapping to DB CheckingAccount table
+        // allow to work directly with checking account table
+        // adding table to database with code first
+        public DbSet<CheckingAccount> CheckingAccounts { get; set; }
+
+        public DbSet<Transaction> Transcations { get; set; }
     }
+
 }
