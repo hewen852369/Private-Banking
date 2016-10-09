@@ -35,5 +35,25 @@ namespace PrivateBanking.Controllers
             return View();
         }
 
+        public ActionResult Withdrawal(int checkingAccountId)
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Withdrawal(Transaction transaction)
+        {
+            // chekcing if input is vaild (input validation should be checked at view model)
+            if (ModelState.IsValid)
+            {
+                var checkingAccount = db.CheckingAccounts.Find(transaction.CheckingAccountId);
+                db.Transcations.Add(transaction);
+                checkingAccount.Balance = checkingAccount.Balance - transaction.Amount;
+                db.SaveChanges();
+                return RedirectToAction("Index", "Home");
+            }
+            return View();
+        }
+
     }
 }

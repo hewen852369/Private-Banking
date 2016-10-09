@@ -38,5 +38,13 @@ namespace PrivateBanking.Controllers
 
             return View();
         }
+
+        [HttpPost]
+        public ActionResult Contact(string message)
+        {
+            // TODO: send message to HQ
+            ViewBag.TheMessage = "Thanks, we got your message!";
+            return PartialView("_ContactThanks");
+        }
     }
 }
