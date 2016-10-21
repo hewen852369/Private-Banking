@@ -13,6 +13,7 @@ namespace PrivateBanking.Models
 
         [Required]
         [DataType(DataType.Currency)]
+        [Range(1, double.MaxValue, ErrorMessage = "Please enter an amount greater than 0")]
         public decimal Amount { get; set; }
 
         [Required]

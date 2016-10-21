@@ -9,8 +9,7 @@ namespace PrivateBanking.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
-            ContextKey = "PrivateBanking.Models.ApplicationDbContext";
+            AutomaticMigrationsEnabled = false;
         }
 
         protected override void Seed(PrivateBanking.Models.ApplicationDbContext context)
